@@ -5,17 +5,17 @@ Matrix * malloc_matrix
 	const size_t size,
 	const size_t length
 ) {
-	Matrix * new_matrix = reallocarray(NULL, 1, sizeof(Matrix));
-	if (new_matrix == NULL)
+	Matrix * matrix = reallocarray(NULL, 1, sizeof(Matrix));
+	if (matrix == NULL)
 		err(EXIT_SUCCESS, "could not allocate matrix");
 
-	new_matrix->size = size;
-	new_matrix->length = length;
-	new_matrix->value = reallocarray(NULL, size * length, sizeof(float));
-	if (new_matrix->value == NULL)
+	matrix->size = size;
+	matrix->length = length;
+	matrix->value = reallocarray(NULL, size * length, sizeof(float));
+	if (matrix->value == NULL)
 		err(EXIT_SUCCESS, "could not allocate matrix");
 
-	return new_matrix;
+	return matrix;
 }
 
 void free_matrix

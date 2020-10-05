@@ -4,15 +4,15 @@ Vector * malloc_vector
 (
 	const unsigned int size
 ) {
-	Vector * new_vector = reallocarray(NULL, 1, sizeof(Vector));
-	if (new_vector == NULL)
+	Vector * vector = reallocarray(NULL, 1, sizeof(Vector));
+	if (vector == NULL)
 		err(EXIT_SUCCESS, "could not allocate vector");
 
-	new_vector->size = size;
-	new_vector->value = reallocarray(NULL, size, sizeof(float));
-	if (new_vector == NULL)
+	vector->size = size;
+	vector->value = reallocarray(NULL, size, sizeof(float));
+	if (vector == NULL)
 		err(EXIT_SUCCESS, "could not allocate vector");
-	return new_vector;
+	return vector;
 }
 
 void free_vector
