@@ -1,6 +1,6 @@
 #include "vector.h"
 
-Vector *malloc_vector
+Vector * malloc_vector
 (
 	const unsigned int size
 ) {
@@ -26,7 +26,7 @@ void free_vector
 
 void zero_vector
 (
-	Vector *vector
+	Vector * vector
 ) {
 	for(unsigned int i = 0;i < vector->size;i++)
 		vector->value[i] = 0.0f;
@@ -140,6 +140,7 @@ void function_on_vector
 
 	for (unsigned int i = 0;i < output->size;i++)
 		output->value[i] = function(input->value[i]);
+	return;
 }
 
 void normalize_vector
@@ -156,6 +157,7 @@ void normalize_vector
 
 	for (unsigned int i = 0;i < output->size;i++)
 		output->value[i] = input->value[i] / sum;
+	return;
 }
 
 Vector * malloc_vector_array
@@ -179,7 +181,11 @@ Vector * malloc_vector_array
 	return vector;
 }
 
-void free_vector_array(Vector * vector_array) {
+void free_vector_array
+(
+	Vector * vector_array
+) {
 	free(vector_array[0].value);
 	free(vector_array);
+	return;
 }
