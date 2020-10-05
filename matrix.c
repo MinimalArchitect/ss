@@ -215,7 +215,11 @@ Matrix * malloc_matrix_array
 	return matrix;
 }
 
-void free_matrix_array(Matrix * matrix_array) {
+void free_matrix_array
+(
+	Matrix * matrix_array
+) {
 	free(matrix_array[0].value);
 	free(matrix_array);
+	return;
 }
